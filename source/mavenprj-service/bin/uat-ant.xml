@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mavenprj-service" basedir="." default="deploy">
+	<tstamp>
+		<format property="today" pattern="yyyyMMdd" offset="0" unit="day" />
+		<format property="buildTime" pattern="HHmmss" />
+	</tstamp>
+
+	<!-- 参数:base路径 -->
+	<property name="basedir" value="." />
+	<!-- 参数:项目名 -->
+	<property name="projectName" value="mavenprj-service" />
+	<property name="version" value="0.0.1-SNAPSHOT" />
+	<!-- 参数:部署SH -->
+	<property name="sshName" value="deploy.sh" />
+	<!-- 参数:服务器地址 -->
+	<property name="server" value="192.168.85.200" />
+	<property name="serverUser" value="mattdamon" />
+	<property name="serverPW" value="mattdamon" />
+
+	<target name="deploy" depends="copy" />
+	<target name="init" />
+
+	<target name="copy">
+		<copy tofile="${basedir}/../deploy/${today}/${projectName}.${buildTime}.war" file="${basedir}/target/${projectName}.war" overwrite="true" />
+		<copy tofile="${basedir}/../deploy/uat/${projectName}.war" file="${basedir}/target/${projectName}.war" overwrite="true" />
+	</target>
+
+	<target name="delete">
+	</target>
+
+	<!--<target name="ftp" description="ftp">
+		<ftp server="${server}" userid="${serverUser}" password="${serverPW}">
+			<fileset dir="${basedir}/target">
+				<include name="${projectName}.war" />
+			</fileset>
+		</ftp>
+	</target>-->
+
+	<!-- <target name="sshexec"> <sshexec host="${server}" username="root" password="mattdamon" 
+		trust="true" command="sh /tpdata/weblogic/${sshName}" /> </target> -->
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+	<!-- <filter> <filter-name>EnvFilter</filter-name> <filter-class>vjplus.service.filter.EnvFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>EnvFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> <filter> <filter-name>Resteasy</filter-name> <filter-class> 
+		org.jboss.resteasy.plugins.server.servlet.FilterDispatcher </filter-class> 
+		<init-param> <param-name>javax.ws.rs.Application</param-name> <param-value>vjplus.service.rest.VJPlusRestApplication 
+		</param-value> </init-param> </filter> <filter-mapping> <filter-name>Resteasy</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

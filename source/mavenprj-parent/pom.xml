@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<properties>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+	</properties>
+
+	<groupId>com.matt.damon.maven</groupId>
+	<artifactId>mavenprj-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>mattdamon</name>
+	<description>mattdamon maven project(...) </description>
+
+	<modules>
+		<module>../mavenprj-core</module>
+		<module>../mavenprj-dbcore</module>
+		<module>../mavenprj-logic</module>
+		<module>../mavenprj-service</module>
+	</modules>
+	
+	<distributionManagement>
+		<repository>
+			<id>mattdamon</id>
+			<name>mattdamon Release Repository</name>
+			<url>http://192.168.2.202:8081/nexus/content/repositories/release/</url>
+		</repository>
+		<snapshotRepository>
+			<id>mattdamon</id>
+			<name>mattdamon Snapshot Repository</name>
+			<url>http://192.168.2.202:8081/nexus/content/repositories/snapshot/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Common dependency -->
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxrs-war</artifactId>
+				<version>2.3.7.Final</version>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jackson-provider</artifactId>
+				<version>3.0.2.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jasig.cas.client</groupId>
+				<artifactId>cas-client-core</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils-core</artifactId>
+				<version>1.8.3</version>
+			</dependency>
+			<dependency>
+				<groupId>xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>2.11.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+			</dependency>
+
+			<!-- JDBC driver -->
+			<dependency>
+				<groupId>postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>9.1-901-1.jdbc4</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.25</version>
+			</dependency>
+			<dependency>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc14</artifactId>
+				<version>10.2.0.4.0</version>
+			</dependency>
+
+			<!-- mavenprj -->
+			<dependency>
+				<groupId>com.matt.damon.maven</groupId>
+				<artifactId>mavenprj-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.matt.damon.maven</groupId>
+				<artifactId>mavenprj-dbcore</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.matt.damon.maven</groupId>
+				<artifactId>mavenprj-logic</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.matt.damon.maven</groupId>
+				<artifactId>mavenprj-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
